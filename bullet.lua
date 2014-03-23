@@ -1,26 +1,24 @@
 
-bullet = {}
-bullet.x = 0
-bullet.y = 0
-bullet.width = 3
-bullet.height = 3
-bullet.speed = 450
-bullet.vec = {}
+function newBullet(x, y, vec)
+    local bulletInstance = {}
 
-function bullet.spawn(x, y, vec)
-	bullet.x = x
-	bullet.y = y
-	bullet.vec = vec
+	bulletInstance.x = x
+	bulletInstance.y = y
+	bulletInstance.vec = vec
 
-	return bullet
+	bulletInstance.width = 3
+	bulletInstance.height = 3
+	bulletInstance.speed = 300
+
+    return bulletInstance
 end
 
-function bullet.draw()
+function drawBullet(self)
 	love.graphics.setColor(255, 0, 0)
-	love.graphics.rectangle('fill', bullet.x, bullet.y, bullet.width, bullet.height)
+	love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
 end
 
-function bullet.update(dt)
-	bullet.x = bullet.x + bullet.vec.x * bullet.speed * dt
-	bullet.y = bullet.y + bullet.vec.y * bullet.speed * dt
+function updateBullet(self, dt)
+	self.x = self.x + self.vec.x * self.speed * dt
+	self.y = self.y + self.vec.y * self.speed * dt
 end

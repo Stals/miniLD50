@@ -5,9 +5,11 @@ weapon.cooldown = 0.1  --in seconds
 weapon.canShoot = true
 weapon.timeElapsed = 0
 
+bullets = {}
+
 function weapon.draw()
-	for i,v in ipairs(bullet) do
-		v.b.draw()
+	for i,v in ipairs(bullets) do
+		drawBullet(v.b)
 	end
 end
 
@@ -20,8 +22,8 @@ function weapon.update(dt)
 	end
 
 	-- update bullets
-	for i,v in ipairs(bullet) do
-		v.b.update(dt)
+	for i,v in ipairs(bullets) do
+		updateBullet(v.b, dt)
 	end
 end
 
@@ -30,7 +32,8 @@ function weapon.shoot(x, y, vec)
 		weapon.canShoot = false
 		weapon.timeElapsed = 0
 
-		bul = bullet.spawn(x, y, vec)
-		table.insert(bul, {b=bul})
+		local instance = newBullet(x, y, vec)
+		table.insert(bullets, {b=instance})
+
 	end
 end
