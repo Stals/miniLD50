@@ -6,8 +6,7 @@ function newEnemy(x, y)
 	enemyInstance.x = x
 	enemyInstance.y = y
 
-	enemyInstance.width = 20
-	enemyInstance.height = 20
+	enemyInstance.radius = 10
 	enemyInstance.speed = 125
 
     return enemyInstance
@@ -15,7 +14,8 @@ end
 
 function drawEnemy(self)
 	love.graphics.setColor(0, 0, 255)
-	love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
+	--love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
+	love.graphics.circle( "fill", self.x, self.y, self.radius, 10)
 end
 
 function updateEnemy(self, dt)
