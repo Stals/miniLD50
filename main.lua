@@ -25,7 +25,7 @@ end
 function updateEnemies(dt)
 	len = table.getn(enemies)
 
-	 for i=1, len do
+	 for i = 1, len do
 		updateEnemy(enemies[i], dt)
 	end
 end
@@ -33,7 +33,7 @@ end
 function drawEnemies()
 	len = table.getn(enemies)
 
-	 for i=1, len do
+	 for i = 1, len do
 		drawEnemy(enemies[i])
 	end
 end
