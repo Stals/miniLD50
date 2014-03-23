@@ -6,9 +6,9 @@ enemies = {}
 function love.load()
 	player.load()
 
-	table.insert(enemies, newEnemy(100, 100))
-	table.insert(enemies, newEnemy(200, 200))
-	table.insert(enemies, newEnemy(300, 300))
+	table.insert(enemies, newEnemy(love.graphics.getWidth() / 4, 100))
+	table.insert(enemies, newEnemy(love.graphics.getWidth() / 2, 100))
+	table.insert(enemies, newEnemy(love.graphics.getWidth() * (3 / 4), 100))
 end
 
 function love.update(dt)

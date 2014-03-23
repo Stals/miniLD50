@@ -5,8 +5,8 @@ player = {}
 function player.load()
 	player.width = 20
 	player.height = 20
-	player.x = 5
-	player.y = 5
+	player.x = love.graphics.getWidth() / 2 - (player.width / 2)
+	player.y = love.graphics.getHeight() * (3 / 4) - (player.height / 2)
 	player.speed = 250 --pixels per second
 end
 

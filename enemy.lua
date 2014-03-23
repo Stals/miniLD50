@@ -19,11 +19,13 @@ function drawEnemy(self)
 end
 
 function updateEnemy(self, dt)
+	-- set vector to player
 	vec = {x = player.x - self.x, y = player.y - self.y}
 	len = math.sqrt(vec.x * vec.x + vec.y * vec.y)
 	vec.x = vec.x / len
 	vec.y = vec.y / len
 
+	-- move enemy
 	self.x = self.x + vec.x * self.speed * dt
 	self.y = self.y + vec.y * self.speed * dt
 end
